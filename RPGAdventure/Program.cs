@@ -1,5 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+/*Notes for what will be worked on next:
+ * no immediate tasks rn - working through more ideas to progress
+ * 
+ * work to separate classes into different files, call them from main class in program.cs (Coming later)
+ */
+
 namespace AdventureRPG {
 
     public static class Game {
