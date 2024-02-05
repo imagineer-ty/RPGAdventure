@@ -53,6 +53,8 @@ namespace AdventureRPG {
             Console.WriteLine(message);
             Console.ResetColor();
         }
+
+        //first choice in game 
         static void Choice()
         {
             string input = "";
