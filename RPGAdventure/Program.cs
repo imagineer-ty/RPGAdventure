@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 /*Notes for what will be worked on next:
- * no immediate tasks rn - working through more ideas to progress
+ *Check Choice() method and go through switch case - section may need to be removed for if/else until more options for character 
  * 
  * work to separate classes into different files, call them from main class in program.cs (Coming later)
  */
@@ -10,8 +10,22 @@ namespace AdventureRPG {
 
     public static class Game {
 
+        static int Scenarios = 3;
         //name of character
         static string CharacterName = "Player 1";
+
+        static string[] PartOne = { 
+        "part one of the game "};
+
+        static string[] PartTwo =
+        {
+        "part two of the game"
+        };
+
+        static string[] PartThree =
+        {
+        "part three of the game"
+        };
 
         //print game title
         public static void StartGame()
@@ -20,6 +34,13 @@ namespace AdventureRPG {
             Dialog("Hey you, where'd you come from?");
             NameCharacter();
             Choice();
+            EndGame();
+        }
+        
+        public static void EndGame()
+        {
+            //end of game text
+            Console.WriteLine("Your story ends here");
         }
         //player name input 
         static void NameCharacter()
@@ -61,9 +82,50 @@ namespace AdventureRPG {
         }
 
         //first choice in game 
+
         static void Choice()
         {
             string input = "";
+
+            //might take out this swtich section - may not be needed 
+            switch (section)
+            {
+                case 1:
+                    //part one
+                    Console.WriteLine(PartOne[0]);
+
+                    //read players first choice a or b
+                    Console.ForegroundColor= ConsoleColor.Green;
+
+                    Console.WriteLine("Enter your choice:");
+                    input = Console.ReadLine();
+                    input = input.ToLower();
+                    Console.ResetColor();
+
+                    if (input == "a")
+                    {
+                        Console.WriteLine(PartOne[1]);
+                    } else
+                    {
+                        Console.WriteLine(PartOne[2]);
+                    }
+
+                    //print next part of section
+                    Console.WriteLine(PartOne[3]);
+
+                    //if a again print next, or skip ahead
+                    if(input == "a")
+                    {
+                        Console.WriteLine(PartOne[4]);
+                    } else
+                    {
+                        Console.WriteLine(PartOne[5]);
+                    }
+                    
+
+
+            }
+
             Decision("\n"+CharacterName + ", Which will you choose? A or B ");
             input = Console.ReadLine();
             if(input == "B")
